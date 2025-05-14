@@ -9,10 +9,9 @@ module.exports = {
         const channel = interaction.guild.channels.cache.get(channelId) || interaction.guild.channels.cache.find(channel => channel.name === 'logs');
         
         if (!channel) {
-            console.log('Log channel not found');
+            console.log('Log channel not found please check your config.json');
             return;
         }
-
         if (interaction.isButton()) {
             const logEmbed = new EmbedBuilder()
                 .setTitle(`${interaction.user.tag} Clicked a button`)
